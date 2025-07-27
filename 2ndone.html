@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ackerman Business Solutions</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: #004aad;
+      color: white;
+      padding: 30px 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    /* Logo styling */
+    .logo {
+      width: 50px;
+      height: 50px;
+      flex-shrink: 0;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      font-weight: 300;
+      width: 100%;
+      margin-top: 5px;
+      max-width: 600px;
+    }
+
+    nav {
+      background: #022f66;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 15px 0;
+      font-weight: 600;
+      font-size: 1rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      color: #004aad;
+      margin-bottom: 20px;
+      border-bottom: 3px solid #004aad;
+      padding-bottom: 10px;
+      font-weight: 700;
+    }
+
+    p {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+
+    /* Services */
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: space-between;
+    }
+
+    .service {
+      background: white;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgb(0 0 0 / 0.08);
+      flex: 1 1 300px;
+      min-width: 280px;
+      transition: transform 0.3s;
+    }
+
+    .service:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 15px rgb(0 0 0 / 0.12);
+    }
+
+    .service h3 {
+      margin-bottom: 15px;
+      color: #022f66;
+      font-weight: 700;
+    }
+
+    /* Why us section */
+    .why-us-list {
+      list-style-type: disc;
+      margin-left: 20px;
+      font-size: 1.1rem;
+      color: #444;
+    }
+
+    /* Testimonials */
+    blockquote {
+      font-style: italic;
+      background: #e0f0ff;
+      padding: 25px;
+      border-left: 6px solid #004aad;
+      margin-bottom: 30px;
+      border-radius: 6px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.1rem;
+      color: #222;
+    }
+
+    blockquote footer {
+      margin-top: 12px;
+      font-weight: 600;
+      color: #004aad;
+      text-align: right;
+      font-size: 1rem;
+    }
+
+    /* Contact Form */
+    form {
+      max-width: 600px;
+      margin: 0 auto 60px;
+      background: white;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      margin-top: 18px;
+      font-size: 1rem;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      resize: vertical;
+      transition: border-color 0.3s;
+    }
+
+    form input:focus, form textarea:focus {
+      border-color: #004aad;
+      outline: none;
+    }
+
+    form button {
+      margin-top: 25px;
+      background: #004aad;
+      color: white;
+      border: none;
+      padding: 14px 0;
+      border-radius: 8px;
+      font-size: 1.15rem;
+      cursor: pointer;
+      font-weight: 700;
+      width: 100%;
+      transition: background-color 0.3s;
+    }
+
+    form button:hover {
+      background: #022f66;
+    }
+
+    footer {
+      background: #022f66;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 60px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+      }
+      .services {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <svg class="logo" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Ackerman Business Solutions logo" role="img">
+    <circle cx="32" cy="32" r="30" stroke="white" stroke-width="4"/>
+    <path d="M20 44 L32 20 L44 44" stroke="white" stroke-width="4" stroke-linejoin="round" fill="none"/>
+  </svg>
+  <div>
+    <h1>Ackerman Business Solutions</h1>
+    <p>Your partner in business growth and digital marketing success</p>
+  </div>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#why-us">Why Us</a>
+  <a href="#testimonials">Testimonials</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+  <h2>About Us</h2>
+  <p>At Ackerman Business Solutions, we help small and medium businesses elevate their online presence with tailored digital marketing strategies and hands-on consulting. Founded by Ethan Ackerman, we are passionate about helping your business stand out in a crowded marketplace.</p>
+  <p>We combine expertise with a personal touch to deliver measurable growth and lasting success for your brand.</p>
+</section>
+
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="service">
+      <h3>Social Media Management</h3>
+      <p>Complete setup and management of your social media accounts, daily content creation, and active audience engagement to grow your brand organically.</p>
+    </div>
+    <div class="service">
+      <h3>Google Business Profile Optimization</h3>
+      <p>Boost your local visibility by optimizing your Google Business Profile to attract more nearby customers and increase foot traffic.</p>
+    </div>
+    <div class="service">
+      <h3>Growth Strategy Consulting</h3>
+      <p>Personalized strategy sessions to identify opportunities, overcome challenges, and accelerate your business revenue and market presence.</p>
+    </div>
+    <div class="service">
+      <h3>Brand Identity Development</h3>
+      <p>Modern, minimal branding solutions including logo design, color schemes, and messaging that reflect your company’s values and vision.</p>
+    </div>
+  </div>
+</section>
+
+<section id="why-us">
+  <h2>Why Choose Us?</h2>
+  <ul class="why-us-list">
+    <li>Proven track record helping local businesses grow with measurable results.</li>
+    <li>Customized strategies tailored to your unique business goals.</li>
+    <li>Modern, minimalist design and marketing expertise that keeps you ahead of trends.</li>
+    <li>Dedicated personal service — you work directly with the founder, Ethan Ackerman.</li>
+    <li>Transparent pricing with no hidden fees.</li>
+  </ul>
+</section>
+
+<section id="testimonials">
+  <h2>What Our Clients Say</h2>
+  <blockquote>
+    “Ethan helped us double our online engagement in just 2 months. His strategies are effective and easy to implement.”
+    <footer>— Sarah L., Boutique Owner</footer>
+  </blockquote>
+  <blockquote>
+    “Thanks to Ackerman Business Solutions, our Google profile now attracts twice as many local customers. Highly recommend!”
+    <footer>— Michael D., Cafe Owner</footer>
+  </blockquote>
+  <blockquote>
+    “Professional, attentive, and results-driven. I can’t recommend Ethan enough for small business growth.”
+    <footer>— Emily R., Marketing Director</footer>
+  </blockquote>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <form action="https://formspree.io/f/mqalbazd" method="POST">
+    <label for="name">Name:</label>
+    <input id="name" name="name" type="text" placeholder="Your full name" required />
+
+    <label for="email">Email:</label>
+    <input id="email" name="email" type="email" placeholder="you@example.com" required />
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="5" placeholder="How can we help you?" required></textarea>
+
+    <input type="hidden" name="_replyto" value="ethanacky@gmail.com" />
+
+    <button type="submit">Send Message</button>
+  </form>
+  <p style="text-align:center; font-size:0.9rem; color:#666;">
+    Or email us directly at <a href="mailto:ethanacky@gmail.com">ethanacky@gmail.com</a>
+  </p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Ackerman Business Solutions. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
